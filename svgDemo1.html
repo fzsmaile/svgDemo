@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    .path{
+      stroke-dasharray: 1000;
+      animation: dash 5s linear forwards;
+    }
+    @keyframes dash{
+      from{
+        stroke-dashoffset: 1000;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .star-path{
+       fill: none;
+       stroke-width:10;
+       stroke:#d3dce6;
+       stroke-linejoin:round;
+       stroke-linecap:round;
+    }
+    .star-fill{
+       fill: none;
+       stroke-width:10;
+       stroke:#ff7700;
+       stroke-linejoin:round;
+       stroke-linecap:round;
+       stroke-dasharray: 1340;
+       stroke-dashoffset: 0;
+       animation: starFill 2s ease-out forwards;
+    }
+    @keyframes starFill {
+       0%{ stroke-dashoffset:1340; }
+       100%{ stroke-dashoffset: 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+<p>This is an HTML paragraph</p>
+
+<div>
+  <svg width="300" height="100">
+    <g id="myCircle">
+      <text x="25" y="20">圆形</text>
+      <circle cx="50" cy="50" r="20"/>
+    </g>
+
+    <use href="#myCircle" x="100" y="0" fill="blue" />
+    <use href="#myCircle" x="200" y="0" fill="white" stroke="blue" />
+  </svg>
+</div>
+<div>
+  <svg width="500" height="500">
+    <defs>
+      <pattern id="dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <circle fill="#bee9e8" cx="50" cy="50" r="35" />
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#dots)" />
+  </svg>
+</div>
+<div>
+  <svg width="500px" height="10px">
+    <rect x="0" y="0" width="100" height="10" fill="#feac5e">
+      <animate attributeName="x" from="0" to="500" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="width" from="10" to="100" dur="2s" repeatCount="indefinite" />
+    </rect>
+  </svg>
+</div>
+<div>
+  <svg width="500px" height="500px">
+    <rect x="250" y="250" width="50" height="50" fill="#4bc0c8">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="10s" from="0 300 300" to="360 300 300" repeatCount="indefinite" />
+    </rect>
+    <rect x="250" y="250" width="50" height="50" fill="#4bc0c8">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="10s" from="0 200 200" to="360 400 400" repeatCount="indefinite" />
+    </rect>
+  </svg>
+</div>
+<div>
+  <svg width="100px" height="100px">
+    <circle r="10" cx="10" cy="50" fill="#4bc0c8" stroke="" stroke-width="">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+    </circle>
+    <circle r="10" cx="90" cy="50" fill="#4bc0c8" stroke="" stroke-width="">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+    </circle>
+    <circle r="10" cx="50" cy="10" fill="#4bc0c8" stroke="" stroke-width="">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+    </circle>
+    <circle r="10" cx="50" cy="90" fill="#4bc0c8" stroke="" stroke-width="">
+      <animateTransform attributeName="transform" type="rotate" begin="0s" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+    </circle>
+  </svg>
+</div>
+<div>
+  <svg width="350" height="160">
+    <g class="layer" transform="translate(60,10)">
+      <circle r="5" cx="0"   cy="105" />
+      <circle r="5" cx="90"  cy="90"  />
+      <circle r="5" cx="180" cy="60"  />
+      <circle r="5" cx="270" cy="0"   />
+
+      <g class="y axis">
+        <line x1="0" y1="0" x2="0" y2="120" />
+        <text x="-40" y="105" dy="5">$10</text>
+        <text x="-40" y="0"   dy="5">$80</text>
+      </g>
+      <g class="x axis" transform="translate(0, 120)">
+        <line x1="0" y1="0" x2="270" y2="0" />
+        <text x="-30"   y="20">January 2014</text>
+        <text x="240" y="20">April</text>
+      </g>
+    </g>
+  </svg>
+</div>
+<div>
+  <!--三次贝塞尔曲线--> 
+  <svg width="190px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M130 110 C 120 140, 180 140, 170 110" stroke="black" fill="transparent"/> 
+    <circle cx="130" cy="110" r="2" fill="red"/> <circle cx="120" cy="140" r="2" fill="red"/> 
+    <line x1="130" y1="110" x2="120" y2="140" style="stroke:rgb(255,0,0);stroke-width:2"/> 
+    <circle cx="180" cy="140" r="2" fill="red"/> <circle cx="170" cy="110" r="2" fill="red"/> 
+    <line x1="180" y1="140" x2="170" y2="110" style="stroke:rgb(255,0,0);stroke-width:2"/> 
+  </svg>
+</div>
+<div>
+  <!--三次贝塞尔曲线简写--> 
+  <svg width="190px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/><circle cx="10" cy="80" r="2" fill="red"/> 
+    <circle cx="40" cy="10" r="2" fill="red"/> 
+    <line x1="10" y1="80" x2="40" y2="10" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+    <circle cx="65" cy="10" r="2" fill="red"/> 
+    <circle cx="95" cy="80" r="2" fill="red"/> 
+    <line x1="65" y1="10" x2="95" y2="80" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+    <circle cx="125" cy="150" r="2" fill="blue"/> 
+    <circle cx="180" cy="80" r="2" fill="red"/> 
+    <circle cx="150" cy="150" r="2" fill="red"/> 
+    <line x1="95" y1="80" x2="125" y2="150" style="stroke:blue;stroke-width:1"/> 
+    <line x1="180" y1="80" x2="150" y2="150" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+  </svg>
+</div>
+<div>
+  <!--二次贝塞尔曲线--> 
+  <svg width="190px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M10 80 Q 95 10 180 80" stroke="black" fill="transparent"/> 
+    <!--Points-->
+    <circle cx="10" cy="80" r="2" fill="red"/> 
+    <circle cx="95" cy="10" r="2" fill="red"/> 
+    <circle cx="180" cy="80" r="2" fill="red"/> 
+    <line x1="10" y1="80" x2="95" y2="10" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+    <line x1="95" y1="10" x2="180" y2="80" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+  </svg>
+</div>
+<div>
+  <!--二次贝塞尔曲线简写--> 
+  <svg width="190px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M10 80 Q 52.5 10, 95 80 T 180 80" stroke="black" fill="transparent"/> 
+    <circle cx="10" cy="80" r="2" fill="red"/> 
+    <circle cx="52.5" cy="10" r="2" fill="red"/> 
+    <line x1="10" y1="80" x2="52.5" y2="10" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+    <circle cx="95" cy="80" r="2" fill="red"/> 
+    <line x1="95" y1="80" x2="52.5" y2="10" style="stroke:rgb(255,0,0);stroke-width:1"/> 
+    <circle cx="180" cy="80" r="2" fill="blue"/> 
+    <circle cx="137.5" cy="150" r="2" fill="blue"/> 
+    <line x1="95" y1="80" x2="137.5" y2="150" style="stroke:rgb(0,0,255);stroke-width:1"/> 
+    <line x1="137.5" y1="150" x2="180" y2="80" style="stroke:rgb(0,0,255);stroke-width:1"/> 
+  </svg>
+</div>
+<div>
+  <svg width="320px" height="320px" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M10 315 L 110 215 A 30 50 0 0 1 162.55 162.45 L 172.55 152.45 A 30 50 -45 0 1 215.1 109.9 L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5" class="path"/> 
+  </svg>
+</div>
+<div>
+  <svg width="320px" height="320px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="-210 0 400 400 "> 
+    <path d="M 66 66 A 160 160 0 0 0 65 65" stroke-width="2" stroke="black" fill="white" class="path"/>
+  </svg>
+</div>
+<div>
+  <svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+    <path  id="circle" d="
+        M 100, 100
+        m -75, 0
+        a75,75 0 1,0 150,0
+        a75,75 0 1,0 -150,0"
+    style="stroke:#000000;fill:#f0f0f5"/>
+     <path  id="left" d="
+        M25, 100
+       L100,100"
+    style="stroke:#00ffff;"/>
+    <path id="right" d="
+        M100, 100
+       L175,100"
+    style="stroke:#ff00ff;"/>
+    <path id="top" d="
+        M100, 100
+       L100,25"
+    style="stroke:#ffff66;"/>
+    <path id="bottom" d="
+        M100, 100
+       L100,175"
+    style="stroke:#ccccff;"/>
+  </svg>
+</div>
+<div style="height: 100px; ">
+  <svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg" viewbox="100 100 200 200">
+    <circle class="path" r="96" cx="200" cy="200" fill="white" stroke="red" stroke-width="4"/>   
+  </svg>
+</div>
+<div style="height: 100px; ">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="-100 -100 200 200" >
+   <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" stroke="#d3dce6" stroke-width="10"  stroke-linejoin="round";
+       stroke-linecap="round" fill="none"></polygon>
+
+   <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" stroke="#ff7700" stroke-width="10" fill="none" stroke-linejoin="round";
+       stroke-linecap="round" class="path"></polygon >
+  </svg>
+</div>
+</body>
+</html>

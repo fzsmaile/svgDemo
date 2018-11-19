@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    .path{
+      stroke-dasharray: 1000;
+      animation: dash 5s linear forwards;
+    }
+    @keyframes dash{
+      from{
+        stroke-dashoffset: 1000;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .star-path{
+       fill: none;
+       stroke-width:10;
+       stroke:#d3dce6;
+       stroke-linejoin:round;
+       stroke-linecap:round;
+    }
+    .star-fill{
+       fill: none;
+       stroke-width:10;
+       stroke:#ff7700;
+       stroke-linejoin:round;
+       stroke-linecap:round;
+       stroke-dasharray: 1340;
+       stroke-dashoffset: 0;
+       animation: starFill 2s ease-out forwards;
+    }
+    @keyframes starFill {
+       0%{ stroke-dashoffset:1340; }
+       100%{ stroke-dashoffset: 0; }
+    }
+
+  </style>
+</head>
+<body>
+<div style="height: 100px; ">
+  <svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg" viewbox="100 100 200 200">
+    <circle class="path" r="96" cx="200" cy="200" fill="white" stroke="red" stroke-width="4"/>   
+  </svg>
+</div>
+<div style="height: 100px; ">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="-100 -100 200 200" >
+   <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" stroke="#d3dce6" stroke-width="10"  stroke-linejoin="round";
+       stroke-linecap="round" fill="none"></polygon>
+
+   <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" stroke="#ff7700" stroke-width="10" fill="none" stroke-linejoin="round";
+       stroke-linecap="round" class="path"></polygon >
+  </svg>
+</div>
+<div>
+    <svg svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024">
+      <circle cx="500" cy="500" r="70" fill="orange"/>
+      <g>
+        <circle cx="650" cy="650" r="20" fill="green">
+        </circle>
+        <path d="M 650 630 A 20 20 90 0 0 650 670" stroke-width="" stroke="" fill="rgba(255,255,255,.2)">
+        </path>
+        <circle cx="670" cy="670" r="5" fill="gray">
+          <animateTransform attributeName="transform" attributeType="XML" from="0 650 650" to="360 650 650" type="rotate" dur="3s" repeatCount="indefinite">
+          </animateTransform>
+        </circle >
+          <animateTransform attributeName="transform" attributeType="XML" from="0 500 500" to="360 500 500" type="rotate" rotate="auto" dur="10s"  repeatCount="indefinite">
+          </animateTransform>
+      </g>
+    </svg>
+</div>
+</body>
+</html>

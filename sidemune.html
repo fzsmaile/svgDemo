@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    .side-menu{
+      position: fixed;
+      top: 50px;
+      right: -120px;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      z-index: 99;
+    }
+
+    .side-menu::before{
+      content: '学科';
+      width: 30px;
+      height: 40px;
+      border: 1px solid #ccc;
+      position: fixed;
+      top: 70px;
+      right:0;
+      z-index: 98;
+      opacity: 1;
+      -webkit-transition: all 0.1s;
+      -moz-transition: all 0.1s;
+      transition: all 0.1s;
+    }
+    .side-menu:hover{
+      right: 0;
+    }
+    .side-menu:hover::before{
+      opacity: 0;
+    }
+    .subject-menu{
+      border: 1px solid rgb(221,221,221);
+      max-height: 500px;
+      width: 120px;
+      overflow-y: auto;
+    }
+    .subject-menu a{
+      text-decoration: none !important;
+    }
+    .subject-menu ul{
+      border-top: 1px solid rgb(221,221,221);
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .subject-menu ul>li{
+      padding: 5px;
+      text-indent: 1em;
+      white-space: nowrap;
+    }
+    .subject-menu ul>li:hover{
+      background-color: #eee;
+    }
+    .subject-menu .panel-heading{
+    }
+  </style>
+</head>
+<body>
+
+<div class="side-menu" style="/*! display: none; */">
+      <div class="subject-menu panel-group" id="sub_menu">
+        <div class="panel ">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#sub_menu" href="#collapse_4" class="collapsed">
+                小学
+              </a>
+            </h4>
+          </div>
+          <div id="collapse_4" class="panel-collapse collapse in">
+            <ul>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_26">语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_2">数学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_3">英语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_4">科学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_14">音乐</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_37">美术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_38">品德与生活</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_39">品德与社会</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_54">信息技术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_45">心理健康教育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_46">体育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_50">健康教育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_49">民族</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_42">综合实践</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_62">特教生活技能康复课</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_64">蒙语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_68">朝鲜语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_69">朝鲜汉语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_77">道德与法治</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_138">书法</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel ">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#sub_menu" href="#collapse_5" class="">
+                初中
+              </a>
+            </h4>
+          </div>
+          <div id="collapse_5" class="panel-collapse collapse ">
+            <ul>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_5">语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_6">数学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_7">英语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_8">物理</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_9">化学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_15">生物</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_11">历史</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_12">地理</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_13">音乐</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_36">美术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_43">综合实践</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_47">心理健康教育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_48">体育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_51">信息技术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_32">思想品德</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_65">蒙语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_70">朝鲜语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_71">朝鲜汉语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_78">道德与法治</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_139">科学</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel ">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#sub_menu" href="#collapse_6" class="collapsed">
+                高中
+              </a>
+            </h4>
+          </div>
+          <div id="collapse_6" class="panel-collapse collapse ">
+            <ul>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_16">语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_17">数学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_18">英语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_19">物理</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_20">化学</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_21">生物</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_33">思想政治</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_22">历史</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_23">地理</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_40">音乐</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_34">理综合</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_35">文综合</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_41">美术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_44">综合实践</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_53">体育</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_55">信息技术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_52">日语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_74">心理健康</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_73">朝鲜汉语</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_72">朝鲜语文</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_67">通用技术</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_66">蒙语文</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel ">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#sub_menu" href="#collapse_8" class="collapsed">
+                幼儿
+              </a>
+            </h4>
+          </div>
+          <div id="collapse_8" class="panel-collapse collapse ">
+            <ul>
+              
+              <li>
+                <a href="javascript:;" id="menuitem_61">通用</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
